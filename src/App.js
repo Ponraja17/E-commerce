@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
-// import Products from './commponents/Products/Products';
-// import Navbar from './commponents/Navbar/Navbar';
-import { Products, Navbar, Cart, Checkout } from "./commponents";
-import { commerce } from "./lib/commerce";
+import Products from "./commponents/Products/Products";
+import Navbar from "./commponents/Navbar/Navbar";
+import Cart from "./commponents/Cart/Cart";
+import Checkout from "./commponents/CheckoutForm/Checkout/Checkout";
+import commerce from "../src/lib/commerce";
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import { CssBaseline } from "@material-ui/core";
 const App = () => {
