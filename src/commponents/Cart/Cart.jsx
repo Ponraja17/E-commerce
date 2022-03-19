@@ -4,6 +4,7 @@ import React from 'react';
 import useStyles from './styles';
 import CartItem from './CartItem/CartItem';
 import { Link } from 'react-router-dom';
+import EmptyCartImage from '../../assests/EmptyCartImage.jpg';
 
 
 const Cart = ({ cart ,handleUpdateCartQty,handleRemoveFromCart,handleEmptyCart }) => {
@@ -11,10 +12,12 @@ const Cart = ({ cart ,handleUpdateCartQty,handleRemoveFromCart,handleEmptyCart }
     const classes=useStyles();
 
     const EmptyCart = ()=>(
-<Typography variant="subtitle1">You have no items in the cart
-<Link to="/" className={classes.link}>let's add some</Link>!
-</Typography>
+        
+<div><Typography variant="subtitle1">You have no items in the cart
+<Link to="/" className={classes.link}> let's add some</Link>!
+</Typography><Typography component={Link} to="/" ><img src={EmptyCartImage} alt="Sorry!"/></Typography></div>
     );
+        
     const FilledCart = ()=>(
         <>
         <Grid container spacing={3}>
