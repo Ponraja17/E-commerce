@@ -23,16 +23,19 @@ const PaymentForm = ({checkoutToken , backStep , shippingData , onCaptureCheckou
     else{
       const orderData={
         line_items : checkoutToken.live.line_items,
-        customer : {firstname : shippingData.firstName,lastName:shippingData.lastName,email:shippingData.email},
-        shipping : {
-          name : 'Primary',
-          street : shippingData.address1,
-          town_city:shippingData.city,
-          country_state:shippingData.shippingSubdivision,
-          postal_zip_code : shippingData.zip,
-          country : shippingData.shippingCountry
+        customer: { firstname: shippingData.firstName, lastname: shippingData.lastName, email: shippingData.email },
+        shipping: { name: 'International', street: shippingData.address1, town_city: shippingData.city, county_state: shippingData.shippingSubdivision, postal_zip_code: shippingData.zip, country: shippingData.shippingCountry },
+        
+        // customer : {firstname :"Raja",lastName:"P",email:"raja24@gmail.com"},
+        // shipping : {
+        //   name : 'Primary',
+        //   street : "Tiru",
+        //   town_city:"Tirunelveli",
+        //   country_state:"Tamil Nadu",
+        //   postal_zip_code : "627 501",
+        //   country : "IN"
 
-        },
+        // },
         fulfillment : {shipping_method : shippingData.shippingOption},
         payment : {
           gateway : 'stripe',

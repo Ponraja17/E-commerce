@@ -13,7 +13,7 @@ function FormInput({ name , label}) {
    
       <Controller name={name}
       control={control}
-      defaultValue=""
+      
  
         render={({ field })=>(
         

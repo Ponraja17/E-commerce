@@ -19,7 +19,7 @@ import { Link , useHistory } from "react-router-dom";
 
 
 const steps = ["Shipping address", "Payment details"];
-const Checkout = ({ cart , order , onCaptureCheckout , error }) => {
+const Checkout = ({ cart , order , onCaptureCheckout , error}) => {
   const [activeStep, setActiveStep] = useState(0);
   const [checkoutToken ,setCheckoutToken ] = useState(null);
   const [shippingData,setShippingData]  = useState({});
@@ -48,9 +48,15 @@ const Checkout = ({ cart , order , onCaptureCheckout , error }) => {
 
       nextStep();
   }
+  // const test = (data) => {
+  //   setShippingData(data);
+
+  //   nextStep();
+  // };
+
 
   const Form = () => (activeStep == 0 
-    ? <AddressForm checkoutToken={checkoutToken} next={next} /> 
+    ? <AddressForm checkoutToken={checkoutToken} nextStep={nextStep} next={next} setShippingData={setShippingData} /> 
     : <PaymentForm shippingData={shippingData} checkoutToken={checkoutToken} backStep={backStep} onCaptureCheckout={onCaptureCheckout} nextStep={nextStep}/>);
 let Confirmation = () => order.customer?(
     <>
